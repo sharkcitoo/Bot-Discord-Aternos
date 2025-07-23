@@ -1,3 +1,4 @@
+import os
 import json
 import discord
 from discord.ext import commands
@@ -8,16 +9,17 @@ prefix = '$'  # Cambiar command_prefix si lo deseas
 intents = discord.Intents(messages=True, guilds=True, message_content=True)
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
-# archivo de credenciales
-with open('credentials.json') as file:
-	data = json.load(file)
+# Leer credenciales desde variables de entorno
+secret_key = os.getenv("DISCORD_TOKEN")
+user = os.getenv("ATERNOS_USER")
+pswd = os.getenv("ATERNOS_PSWD")
+channel_id = int(os.getenv("DISCORD_CHANNEL"))
+srv_ws = int(os.getenv("N_SERVIDOR"))
 
-# Credenciales para Discord y Aternos
-secret_key = data["credentials"]["discord_bot"]
-user = data["credentials"]["aternos_user"]
-pswd = data["credentials"]["aternos_pwsd"]
-channel_id = data["credentials"]["discord_channel"]
-srv_ws = data["credentials"]["n_servidor"]
+# Conexión con Aternos
+aternos = Client.from_credentials(user, pswd)
+srv_1 = aternos.list_servers()[srv_ws]
+socket = srv_1.wss()
 
 # Para websocket
 aternos = Client.from_credentials(user, pswd)
