@@ -2,7 +2,7 @@ import os
 import json
 import discord
 from discord.ext import commands
-@@ -8,343 +9,344 @@
+
 intents = discord.Intents(messages=True, guilds=True, message_content=True)
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
