@@ -14,12 +14,6 @@ pswd = os.getenv("ATERNOS_PSWD")
 channel_id = int(os.getenv("DISCORD_CHANNEL"))
 srv_ws = int(os.getenv("N_SERVIDOR"))
 
-# Credenciales para Discord y Aternos
-secret_key = data["credentials"]["discord_bot"]
-user = data["credentials"]["aternos_user"]
-pswd = data["credentials"]["aternos_pwsd"]
-channel_id = data["credentials"]["discord_channel"]
-srv_ws = data["credentials"]["n_servidor"]
 # Conexión con Aternos
 aternos = Client.from_credentials(user, pswd)
 srv_1 = aternos.list_servers()[srv_ws]
