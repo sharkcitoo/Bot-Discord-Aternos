@@ -15,8 +15,10 @@ pswd = os.environ.get("ATERNOS_PSWD")
 channel_id = int(os.environ.get("DISCORD_CHANNEL"))
 srv_ws = int(os.environ.get("N_SERVIDOR"))
 
+
 # Cliente de Aternos y WebSocket
-aternos = Client.from_credentials(user, pswd)
+aternos = Client()
+aternos.login(user, pswd)
 srv_1 = aternos.list_servers()[srv_ws]
 socket = srv_1.wss()
 
@@ -26,7 +28,10 @@ print("Iniciando Bot")
 
 def sesion(user, password):
 	"""Función para iniciar sesion"""
-	return Client.from_credentials(user, password)
+	client = Client()
+	client.login(user, password)
+	return client
+
 
 
 def servidores(credentials):
