@@ -2,7 +2,7 @@ import os
 import json
 import discord
 from discord.ext import commands
-from aternos import Client, atserver, atwss, Lists
+#from aternos import Client, atserver, atwss, Lists
 
 
 intents = discord.Intents(messages=True, guilds=True, message_content=True)
