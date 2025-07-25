@@ -7,9 +7,6 @@ intents = discord.Intents(messages=True, guilds=True, message_content=True)
 prefix = "!"  # o usa os.getenv("DISCORD_PREFIX", "!")
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
-# archivo de credenciales
-with open('credentials.json') as file:
-	data = json.load(file)
 # Leer credenciales desde variables de entorno
 secret_key = os.getenv("DISCORD_TOKEN")
 user = os.getenv("ATERNOS_USER")
