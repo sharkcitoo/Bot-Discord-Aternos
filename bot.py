@@ -4,6 +4,7 @@ import discord
 from discord.ext import commands
 
 intents = discord.Intents(messages=True, guilds=True, message_content=True)
+prefix = "!"  # o usa os.getenv("DISCORD_PREFIX", "!")
 bot = commands.Bot(command_prefix=prefix, intents=intents)
 
 # archivo de credenciales
