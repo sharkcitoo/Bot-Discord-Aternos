@@ -1,7 +1,8 @@
 import os
 import discord
 from discord.ext import commands
-from aternos import Client
+from python_aternos import Client
+
 
 # Configuración
 intents = discord.Intents.default()
