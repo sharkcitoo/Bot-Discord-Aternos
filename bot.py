@@ -21,10 +21,6 @@ aternos = Client.from_credentials(user, pswd)
 srv_1 = aternos.list_servers()[srv_ws]
 socket = srv_1.wss()
 
-# Para websocket
-aternos = Client.from_credentials(user, pswd)
-srv_1 = aternos.list_servers()[srv_ws]  # Cambiar numero para websocket de servidor
-socket = srv_1.wss()
 
 print("Iniciando Bot")
 
